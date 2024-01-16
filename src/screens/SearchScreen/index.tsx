@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {styles} from './styles';
+import {StockList} from '../../components';
+import {DATA_SOURCE} from '../../constants';
 
 export const SearchScreen: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Text>Search Screen</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StockList data={DATA_SOURCE} />
+    </SafeAreaView>
   );
 };
