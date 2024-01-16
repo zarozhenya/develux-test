@@ -10,7 +10,12 @@ import {useTheme} from '@react-navigation/native';
 import {styles} from './styles';
 import SearchIcon from '../../assets/search-icon.svg';
 
-export const SearchInput: FC = () => {
+interface SearchInputProps {
+  value: string;
+  onChangeText: (newValue: string) => void;
+}
+
+export const SearchInput: FC<SearchInputProps> = ({value, onChangeText}) => {
   const scheme = useColorScheme();
   const {colors} = useTheme();
 
@@ -27,7 +32,12 @@ export const SearchInput: FC = () => {
         <TouchableOpacity>
           <SearchIcon stroke={colors.text} />
         </TouchableOpacity>
-        <TextInput style={[styles.input, {color: colors.text}]} />
+        <TextInput
+          value={value}
+          onChangeText={onChangeText}
+          style={[styles.input, {color: colors.text}]}
+          autoComplete="off"
+        />
       </View>
     </View>
   );
