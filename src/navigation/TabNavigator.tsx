@@ -11,7 +11,7 @@ type MainStackParamList = {
 
 const Tab = createBottomTabNavigator<MainStackParamList>();
 
-export const MainStack: FC = () => {
+export const TabNavigator: FC = () => {
   const renderStocksTabIcon = useCallback(({color}: {color: string}) => {
     return <StocksIcon stroke={color} />;
   }, []);

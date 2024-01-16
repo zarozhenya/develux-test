@@ -5,14 +5,14 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from '@react-navigation/native';
-import {MainStack} from './src/navigation';
+import {RootNavigator} from './src/navigation';
 
 function App(): React.JSX.Element {
   const scheme = useColorScheme();
 
   return (
     <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <MainStack />
+      <RootNavigator />
     </NavigationContainer>
   );
 }
