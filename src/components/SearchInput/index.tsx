@@ -30,8 +30,8 @@ export const SearchInput: FC<SearchInputProps> = ({value, onChangeText}) => {
       </Text>
       <View style={[styles.field, fieldBackgroundStyles]}>
         {/* TODO: Add functionality for search button */}
-        <TouchableOpacity>
-          <SearchIcon stroke={colors.text} />
+        <TouchableOpacity style={styles.searchIconContainer}>
+          <SearchIcon stroke={colors.text} width={24} height={24} />
         </TouchableOpacity>
         <TextInput
           value={value}

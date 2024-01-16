@@ -13,10 +13,14 @@ export const styles = StyleSheet.create({
   field: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
     height: 48,
     width: '100%',
-    paddingHorizontal: 16,
+    paddingLeft: 48,
+    paddingRight: 16,
+  },
+  searchIconContainer: {
+    position: 'absolute',
+    left: 16,
   },
   input: {
     flexGrow: 1,
