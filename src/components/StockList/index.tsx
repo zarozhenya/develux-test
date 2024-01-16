@@ -1,6 +1,7 @@
 import React, {FC, useCallback} from 'react';
 import {FlatList, ListRenderItem} from 'react-native';
 import {StockListItem} from './StockListItem';
+import {StockListItemSeparator} from './StockListItemSeparator';
 import {StockItem} from '../../types';
 
 interface StockListProps {
@@ -17,6 +18,7 @@ export const StockList: FC<StockListProps> = ({data}) => {
       data={data}
       renderItem={renderItem}
       keyExtractor={item => item.id.toString()}
+      ItemSeparatorComponent={StockListItemSeparator}
     />
   );
 };

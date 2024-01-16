@@ -22,4 +22,9 @@ export const styles = StyleSheet.create({
     lineHeight: 22,
     color: '#ffffff',
   },
+  itemSeparator: {
+    height: 1,
+    backgroundColor: '#000000',
+    opacity: 0.16,
+  },
 });
