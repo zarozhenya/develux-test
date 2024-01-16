@@ -12,16 +12,6 @@ export const styles = StyleSheet.create({
     fontSize: 17,
     lineHeight: 22,
   },
-  itemPriceContainer: {
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    backgroundColor: '#5DD25A',
-  },
-  itemPriceText: {
-    fontSize: 13,
-    lineHeight: 22,
-    color: '#ffffff',
-  },
   itemSeparator: {
     height: 1,
   },

@@ -19,7 +19,7 @@ export const StockList: FC<StockListProps> = ({data}) => {
       renderItem={renderItem}
       keyExtractor={item => item.id.toString()}
       ItemSeparatorComponent={StockListItemSeparator}
-      estimatedItemSize={46}
+      estimatedItemSize={52}
     />
   );
 };

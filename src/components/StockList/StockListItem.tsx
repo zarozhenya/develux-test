@@ -3,6 +3,7 @@ import {Text, View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {StockItem} from '../../types';
 import {styles} from './styles';
+import {PriceTag} from '../PriceTag';
 
 interface StockListItemProps {
   item: StockItem;
@@ -16,11 +17,7 @@ export const StockListItem: FC<StockListItemProps> = ({item: {i, market}}) => {
       <Text style={[styles.itemText, {color: colors.text}]}>
         {i.name}({i.type}) - {market}
       </Text>
-      <View style={styles.itemPriceContainer}>
-        <Text style={styles.itemPriceText}>
-          {Number((price / 100).toFixed(2))}
-        </Text>
-      </View>
+      <PriceTag price={price} />
     </View>
   );
 };
