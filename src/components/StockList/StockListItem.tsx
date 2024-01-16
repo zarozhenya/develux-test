@@ -9,19 +9,26 @@ interface StockListItemProps {
   item: StockItem;
 }
 
-export const StockListItem: FC<StockListItemProps> = ({item: {i, market}}) => {
+export const StockListItem: FC<StockListItemProps> = ({
+  item: {
+    i: {
+      name,
+      type,
+      price: {lastTradedPrevious},
+      lotSize,
+    },
+    market,
+  },
+}) => {
   const {colors} = useTheme();
   // TODO: Implement navigation to details on click
   return (
     <TouchableOpacity
       style={[styles.itemContainer, {backgroundColor: colors.card}]}>
       <Text style={[styles.itemText, {color: colors.text}]}>
-        {i.name}({i.type}) - {market}
+        {name}({type}) - {market}
       </Text>
-      <PriceTag
-        lastTradedPrevious={i.price.lastTradedPrevious}
-        lotSize={i.lotSize}
-      />
+      <PriceTag lastTradedPrevious={lastTradedPrevious} lotSize={lotSize} />
     </TouchableOpacity>
   );
 };

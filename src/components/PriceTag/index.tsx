@@ -1,6 +1,7 @@
 import React, {FC, useMemo} from 'react';
 import {Text, View} from 'react-native';
 import {styles} from './styles';
+import {formatPrice} from '../../utils';
 
 interface PriceTagProps {
   lastTradedPrevious: number;
@@ -22,9 +23,7 @@ export const PriceTag: FC<PriceTagProps> = ({lastTradedPrevious, lotSize}) => {
 
   return (
     <View style={[styles.itemPriceContainer, tagBackgroundStyles]}>
-      <Text style={styles.itemPriceText}>
-        {Number((price / 100).toFixed(2))}
-      </Text>
+      <Text style={styles.itemPriceText}>{formatPrice(price)}</Text>
     </View>
   );
 };
