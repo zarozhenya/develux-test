@@ -7,10 +7,12 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 8,
     paddingHorizontal: 16,
+    gap: 16,
   },
   itemText: {
     fontSize: 17,
     lineHeight: 22,
+    flex: 1,
   },
   itemSeparator: {
     height: 1,
