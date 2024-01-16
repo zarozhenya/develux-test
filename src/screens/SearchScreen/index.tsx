@@ -8,7 +8,7 @@ import {processSearchItems} from '../../utils';
 
 export const SearchScreen: React.FC = () => {
   const [text, setText] = useState('');
-  const [debouncedText] = useDebounce(text, 200);
+  const [debouncedText] = useDebounce(text, 400);
 
   const filteredItems = useMemo(() => {
     const lowerCaseText = debouncedText.toLowerCase().trim();

@@ -9,7 +9,7 @@ interface StockListProps {
   data: StockItem[];
 }
 
-export const StockList: FC<StockListProps> = ({data}) => {
+const List: FC<StockListProps> = ({data}) => {
   const renderItem = useCallback<ListRenderItem<StockItem>>(({item}) => {
     return <StockListItem item={item} />;
   }, []);
@@ -25,3 +25,5 @@ export const StockList: FC<StockListProps> = ({data}) => {
     />
   );
 };
+
+export const StockList = React.memo(List);
