@@ -1,11 +1,12 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {MainStack} from './src/navigation';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView>
-      <Text>Test task</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <MainStack />
+    </NavigationContainer>
   );
 }
 
