@@ -1,10 +1,17 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {useColorScheme} from 'react-native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
 import {MainStack} from './src/navigation';
 
 function App(): React.JSX.Element {
+  const scheme = useColorScheme();
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
       <MainStack />
     </NavigationContainer>
   );
