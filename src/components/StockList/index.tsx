@@ -1,5 +1,5 @@
 import React, {FC, useCallback} from 'react';
-import {FlatList, ListRenderItem} from 'react-native';
+import {FlashList, ListRenderItem} from '@shopify/flash-list';
 import {StockListItem} from './StockListItem';
 import {StockListItemSeparator} from './StockListItemSeparator';
 import {StockItem} from '../../types';
@@ -14,11 +14,12 @@ export const StockList: FC<StockListProps> = ({data}) => {
   }, []);
 
   return (
-    <FlatList
+    <FlashList
       data={data}
       renderItem={renderItem}
       keyExtractor={item => item.id.toString()}
       ItemSeparatorComponent={StockListItemSeparator}
+      estimatedItemSize={46}
     />
   );
 };
