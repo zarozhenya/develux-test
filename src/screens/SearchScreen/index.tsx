@@ -20,6 +20,8 @@ export const SearchScreen: React.FC = () => {
       ({i: {name, type}}) =>
         name.toLowerCase().includes(lowerCaseText) ||
         type.toLowerCase().includes(lowerCaseText),
+    ).sort((firstItem, secondItem) =>
+      firstItem.market.localeCompare(secondItem.market),
     );
   }, [debouncedText]);
 
