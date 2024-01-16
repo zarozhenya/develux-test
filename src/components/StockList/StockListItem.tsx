@@ -11,13 +11,16 @@ interface StockListItemProps {
 
 export const StockListItem: FC<StockListItemProps> = ({item: {i, market}}) => {
   const {colors} = useTheme();
-  const price = i.price.lastTradedPrevious * Number(i.lotSize);
+
   return (
     <View style={[styles.itemContainer, {backgroundColor: colors.card}]}>
       <Text style={[styles.itemText, {color: colors.text}]}>
         {i.name}({i.type}) - {market}
       </Text>
-      <PriceTag price={price} />
+      <PriceTag
+        lastTradedPrevious={i.price.lastTradedPrevious}
+        lotSize={i.lotSize}
+      />
     </View>
   );
 };

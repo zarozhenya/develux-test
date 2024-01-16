@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 3,
-    backgroundColor: '#5DD25A',
   },
   itemPriceText: {
     fontSize: 13,
