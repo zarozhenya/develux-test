@@ -18,7 +18,7 @@ const List: FC<StockListProps> = ({data}) => {
     <FlashList
       data={data}
       renderItem={renderItem}
-      estimatedItemSize={52}
+      estimatedItemSize={44}
       keyExtractor={item => item.id.toString()}
       ItemSeparatorComponent={StockListItemSeparator}
       ListEmptyComponent={StockListEmptyComponent}
