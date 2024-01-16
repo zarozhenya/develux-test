@@ -4,7 +4,12 @@ import {SearchScreen, StocksScreen} from '../screens';
 import StocksIcon from '../assets/stock-icon.svg';
 import SearchIcon from '../assets/search-icon.svg';
 
-const Tab = createBottomTabNavigator();
+type MainStackParamList = {
+  Stocks: undefined;
+  Search: undefined;
+};
+
+const Tab = createBottomTabNavigator<MainStackParamList>();
 
 export const MainStack: FC = () => {
   return (
