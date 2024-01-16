@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {StockItem} from '../../types';
 import {styles} from './styles';
@@ -11,9 +11,10 @@ interface StockListItemProps {
 
 export const StockListItem: FC<StockListItemProps> = ({item: {i, market}}) => {
   const {colors} = useTheme();
-
+  // TODO: Implement navigation to details on click
   return (
-    <View style={[styles.itemContainer, {backgroundColor: colors.card}]}>
+    <TouchableOpacity
+      style={[styles.itemContainer, {backgroundColor: colors.card}]}>
       <Text style={[styles.itemText, {color: colors.text}]}>
         {i.name}({i.type}) - {market}
       </Text>
@@ -21,6 +22,6 @@ export const StockListItem: FC<StockListItemProps> = ({item: {i, market}}) => {
         lastTradedPrevious={i.price.lastTradedPrevious}
         lotSize={i.lotSize}
       />
-    </View>
+    </TouchableOpacity>
   );
 };
