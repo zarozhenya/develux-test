@@ -15,4 +15,9 @@ export const styles = StyleSheet.create({
   itemSeparator: {
     height: 1,
   },
+  emptyList: {
+    padding: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

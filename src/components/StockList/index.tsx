@@ -2,6 +2,7 @@ import React, {FC, useCallback} from 'react';
 import {FlashList, ListRenderItem} from '@shopify/flash-list';
 import {StockListItem} from './StockListItem';
 import {StockListItemSeparator} from './StockListItemSeparator';
+import {StockListEmptyComponent} from './StockListEmptyComponent';
 import {StockItem} from '../../types';
 
 interface StockListProps {
@@ -17,9 +18,10 @@ export const StockList: FC<StockListProps> = ({data}) => {
     <FlashList
       data={data}
       renderItem={renderItem}
+      estimatedItemSize={52}
       keyExtractor={item => item.id.toString()}
       ItemSeparatorComponent={StockListItemSeparator}
-      estimatedItemSize={52}
+      ListEmptyComponent={StockListEmptyComponent}
     />
   );
 };
