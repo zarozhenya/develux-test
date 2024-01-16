@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useCallback} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SearchScreen, StocksScreen} from '../screens';
 import StocksIcon from '../assets/stock-icon.svg';
@@ -12,20 +12,28 @@ type MainStackParamList = {
 const Tab = createBottomTabNavigator<MainStackParamList>();
 
 export const MainStack: FC = () => {
+  const renderStocksTabIcon = useCallback(({color}: {color: string}) => {
+    return <StocksIcon stroke={color} />;
+  }, []);
+
+  const renderSearchTabIcon = useCallback(({color}: {color: string}) => {
+    return <SearchIcon stroke={color} />;
+  }, []);
+
   return (
     <Tab.Navigator>
       <Tab.Screen
         name="Stocks"
         component={StocksScreen}
         options={{
-          tabBarIcon: ({color}) => <StocksIcon stroke={color} />,
+          tabBarIcon: renderStocksTabIcon,
         }}
       />
       <Tab.Screen
         name="Search"
         component={SearchScreen}
         options={{
-          tabBarIcon: ({color}) => <SearchIcon stroke={color} />,
+          tabBarIcon: renderSearchTabIcon,
         }}
       />
     </Tab.Navigator>
