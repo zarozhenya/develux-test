@@ -38,6 +38,7 @@ export const SearchInput: FC<SearchInputProps> = ({value, onChangeText}) => {
           onChangeText={onChangeText}
           style={[styles.input, {color: colors.text}]}
           autoComplete="off"
+          autoCorrect={false}
         />
       </View>
     </View>
