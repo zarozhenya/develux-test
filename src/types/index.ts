@@ -24,3 +24,8 @@ export interface StockItem {
   i: StockItemInfo;
   market: string;
 }
+
+export enum TabEnum {
+  Stocks,
+  Search,
+}
