@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
-import {Text, TextInput, View} from 'react-native';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {styles} from './styles';
+import SearchIcon from '../../assets/search-icon.svg';
 
 export const SearchInput: FC = () => {
   const {colors} = useTheme();
@@ -11,7 +12,12 @@ export const SearchInput: FC = () => {
       <Text style={[styles.hintText, {color: colors.text}]}>
         Type a company name or stock symbol:
       </Text>
-      <TextInput style={styles.input} />
+      <View style={styles.field}>
+        <TouchableOpacity>
+          <SearchIcon stroke="#ffffff" />
+        </TouchableOpacity>
+        <TextInput style={styles.input} />
+      </View>
     </View>
   );
 };
