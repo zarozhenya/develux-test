@@ -17,13 +17,11 @@ export const styles = StyleSheet.create({
     height: 48,
     width: '100%',
     paddingHorizontal: 16,
-    backgroundColor: '#1E1E1F',
   },
   input: {
     flexGrow: 1,
     height: '100%',
     fontSize: 13,
     lineHeight: 16,
-    color: '#ffffff',
   },
 });
