@@ -9,8 +9,10 @@ export const SearchScreen: React.FC = () => {
 
   const filteredItems = useMemo(() => {
     const lowerCaseText = text.toLowerCase();
-    return DATA_SOURCE.filter(({i}) =>
-      i.name.toLowerCase().includes(lowerCaseText),
+    return DATA_SOURCE.filter(
+      ({i: {name, type}}) =>
+        name.toLowerCase().includes(lowerCaseText) ||
+        type.toLowerCase().includes(lowerCaseText),
     );
   }, [text]);
 
