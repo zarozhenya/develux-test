@@ -4,6 +4,7 @@ import {useDebounce} from 'use-debounce';
 import {styles} from './styles';
 import {SearchInput, StockList} from '../../components';
 import {DATA_SOURCE} from '../../constants';
+import {processSearchItems} from '../../utils';
 
 export const SearchScreen: React.FC = () => {
   const [text, setText] = useState('');
@@ -16,20 +17,7 @@ export const SearchScreen: React.FC = () => {
       return [];
     }
 
-    return DATA_SOURCE.filter(
-      ({i: {name, type}}) =>
-        name.toLowerCase().includes(lowerCaseText) ||
-        type.toLowerCase().includes(lowerCaseText),
-    ).sort(
-      (firstItem, secondItem) =>
-        firstItem.market.localeCompare(secondItem.market) ||
-        Math.abs(
-          firstItem.i.price.lastTradedPrevious - firstItem.i.price.high,
-        ) -
-          Math.abs(
-            secondItem.i.price.lastTradedPrevious - secondItem.i.price.high,
-          ),
-    );
+    return processSearchItems(DATA_SOURCE, lowerCaseText);
   }, [debouncedText]);
 
   return (
