@@ -11,13 +11,13 @@ export const SearchScreen: React.FC = () => {
   const [debouncedText] = useDebounce(text, 400);
 
   const filteredItems = useMemo(() => {
-    const lowerCaseText = debouncedText.toLowerCase().trim();
+    const upperCaseText = debouncedText.toUpperCase().trim();
 
-    if (lowerCaseText.length < 2) {
+    if (upperCaseText.length < 2) {
       return [];
     }
 
-    return processSearchItems(DATA_SOURCE, lowerCaseText);
+    return processSearchItems(DATA_SOURCE, upperCaseText);
   }, [debouncedText]);
 
   return (

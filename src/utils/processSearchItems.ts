@@ -5,7 +5,7 @@ export const processSearchItems = (
   query: string,
 ): StockItem[] => {
   const filteredItems = items.filter(({i: {name, type}}) =>
-    `${name.toLowerCase()}(${type.toLowerCase()})`.includes(query),
+    `${name}(${type})`.includes(query),
   );
   return filteredItems.sort(
     (
