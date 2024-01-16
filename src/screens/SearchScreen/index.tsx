@@ -20,8 +20,15 @@ export const SearchScreen: React.FC = () => {
       ({i: {name, type}}) =>
         name.toLowerCase().includes(lowerCaseText) ||
         type.toLowerCase().includes(lowerCaseText),
-    ).sort((firstItem, secondItem) =>
-      firstItem.market.localeCompare(secondItem.market),
+    ).sort(
+      (firstItem, secondItem) =>
+        firstItem.market.localeCompare(secondItem.market) ||
+        Math.abs(
+          firstItem.i.price.lastTradedPrevious - firstItem.i.price.high,
+        ) -
+          Math.abs(
+            secondItem.i.price.lastTradedPrevious - secondItem.i.price.high,
+          ),
     );
   }, [debouncedText]);
 
