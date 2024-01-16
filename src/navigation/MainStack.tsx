@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SearchScreen, StocksScreen} from '../screens';
 import StocksIcon from '../assets/stock-icon.svg';
@@ -6,7 +6,7 @@ import SearchIcon from '../assets/search-icon.svg';
 
 const Tab = createBottomTabNavigator();
 
-export const MainStack: React.FC = () => {
+export const MainStack: FC = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
