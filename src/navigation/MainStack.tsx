@@ -2,6 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SearchScreen, StocksScreen} from '../screens';
 import StocksIcon from '../assets/stock-icon.svg';
+import SearchIcon from '../assets/search-icon.svg';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +16,13 @@ export const MainStack: React.FC = () => {
           tabBarIcon: ({color}) => <StocksIcon stroke={color} />,
         }}
       />
-      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          tabBarIcon: ({color}) => <SearchIcon stroke={color} />,
+        }}
+      />
     </Tab.Navigator>
   );
 };
