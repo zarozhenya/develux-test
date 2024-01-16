@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {Text, View} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import {StockItem} from '../../types';
 import {styles} from './styles';
 
@@ -8,10 +9,11 @@ interface StockListItemProps {
 }
 
 export const StockListItem: FC<StockListItemProps> = ({item: {i, market}}) => {
+  const {colors} = useTheme();
   const price = i.price.lastTradedPrevious * Number(i.lotSize);
   return (
-    <View style={styles.itemContainer}>
-      <Text style={styles.itemText}>
+    <View style={[styles.itemContainer, {backgroundColor: colors.background}]}>
+      <Text style={[styles.itemText, {color: colors.text}]}>
         {i.name}({i.type}) - {market}
       </Text>
       <View style={styles.itemPriceContainer}>

@@ -24,7 +24,5 @@ export const styles = StyleSheet.create({
   },
   itemSeparator: {
     height: 1,
-    backgroundColor: '#000000',
-    opacity: 0.16,
   },
 });
