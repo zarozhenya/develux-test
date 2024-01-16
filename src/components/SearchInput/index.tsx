@@ -29,6 +29,7 @@ export const SearchInput: FC<SearchInputProps> = ({value, onChangeText}) => {
         Type a company name or stock symbol:
       </Text>
       <View style={[styles.field, fieldBackgroundStyles]}>
+        {/* TODO: Add functionality for search button */}
         <TouchableOpacity>
           <SearchIcon stroke={colors.text} />
         </TouchableOpacity>
